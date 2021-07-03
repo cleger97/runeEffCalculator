@@ -241,7 +241,8 @@ def specificSubstatGenerate(filename, runeTypeGrind, minRuneEff, substat, grindL
             display_total_calc_eff = round(total_calc_eff, 2)
             displayMax = round(total_max_eff, 2)
             displayMin = round(total_min_eff, 2)
-            differential = round(displayMax - display_total_calc_eff, 2)
+            # floor differential at 0
+            differential = max(round(displayMax - display_total_calc_eff, 2), 0.0)
             
             # end substats
             # build a rune!
@@ -457,8 +458,9 @@ def generateRunes(filename):
             displayMaxL = round(total_max_eff_legend, 2)
             displayMaxP = round(total_max_eff_purple, 2)
             displayMin = round(total_min_eff, 2)
-            effDifferentialLegend = round(displayMaxL - display_total_calc_eff, 2)
-            effDifferentialPurple = round(displayMaxP - display_total_calc_eff, 2)
+            # floor diff at 0
+            effDifferentialLegend = max(round(displayMaxL - display_total_calc_eff, 2), 0.0)
+            effDifferentialPurple = max(round(displayMaxP - display_total_calc_eff, 2), 0.0)
         
             out = out + "| Current eff: " + str(display_total_calc_eff) + " | Min Eff: " + str(displayMin) + " | Max Eff Legend: " + str(displayMaxL) + " | Max Eff Purple: " + str(displayMaxP) + " | Potential Gain: " + str(effDifferentialLegend)
 
