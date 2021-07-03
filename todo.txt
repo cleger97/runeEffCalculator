@@ -1,0 +1,14 @@
+things to do:
+1) don't let -eff happen, cap at zero 
+   - potential gain = (potential gain) if > 0 else 0
+2) max eff (all grinds) and max eff (current grind selected)
+   - have a # for maxeffall or maxeffgrind
+3) sort results of a search
+   - put all results in an array
+   - have options after a search instead of just going to immediate next
+   - resort option, will resort on the results array
+4) option to lock potential gain to a minimum value (for max/min grinds)
+   - when searching have an option for minimum potential gain
+   - default to none
+
+
